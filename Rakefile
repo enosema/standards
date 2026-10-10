@@ -313,8 +313,9 @@ task conformance: %i[build] do
   engine = File.expand_path(Gem.loaded_specs["standards-registry"].full_gem_path)
 
   # 1. The instance's own built site, against its own contract.
+  base_flag = REGISTRY_BASE == "" ? "" : " --base #{REGISTRY_BASE}"
   sh "#{File.join(engine, 'bin', 'registry-conformance')} check #{SITE_DIR} " \
-     "--expect #{cfg.catalog_path} --schema #{cfg.schema_path}"
+     "--expect #{cfg.catalog_path} --schema #{cfg.schema_path}#{base_flag}"
 
   # 2. A fixture build: the golden catalog through the same Astro pipeline.
   fixtures = File.join(engine, "fixtures", "seed")
@@ -337,7 +338,7 @@ task conformance: %i[build] do
                File.join(SITE_DIR, "docs"))
 
   sh "#{File.join(engine, 'bin', 'registry-conformance')} check #{SITE_DIR} " \
-     "--expect #{fixture_config.catalog_path} --schema #{cfg.schema_path}"
+     "--expect #{fixture_config.catalog_path} --schema #{cfg.schema_path}#{base_flag}"
   puts "OK: conformance suite passed — instance site and fixture build certified"
 end
 
