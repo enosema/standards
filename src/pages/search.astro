@@ -51,7 +51,7 @@ import { withBase } from "../lib/registry";
       }
       function docFor(url) {
         if (!bySlug) return null;
-        var m = url.match(/^\/docs\/([a-z0-9][a-z0-9._-]*?)(?:\.[a-z]+|\/|$)/i);
+        var m = url.replace(window.RB || '', '').match(/^\/docs\/([a-z0-9][a-z0-9._-]*?)(?:\.[a-z]+|\/|$)/i);
         return m && bySlug[m[1]] || null;
       }
       function ensurePagefind() {

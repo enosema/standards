@@ -10,7 +10,7 @@ export const GET: APIRoute = ({ site }) => {
   <Description>Search ${esc(title)} documents by title, identifier, or keyword</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <OutputEncoding>UTF-8</OutputEncoding>
-  <Url type="text/html" method="get" template="${site!.origin}${withBase("/")} ?q={searchTerms}"/>
+  <Url type="text/html" method="get" template="${site!.origin}${withBase("/")}?q={searchTerms}"/>
 </OpenSearchDescription>
 `;
   return new Response(xml, { headers: { "Content-Type": "application/xml; charset=utf-8" } });
