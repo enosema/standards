@@ -1,0 +1,20 @@
+source: github
+output_dir: .artifacts/docs
+file_routing: flat
+cache_dir: .cache/aggregate
+
+channels:
+  - public
+
+include_drafts: true
+
+display_categories:
+  - name: Standards
+    slug: standards
+    doctypes:
+      - standard
+
+github:
+  organizations:
+    - enosema
+  topic: metanorma-release

@@ -1,0 +1,26 @@
+= Enosema Standards Registry
+
+The registry of Enosema Foundation standards: https://www.enosema.org/standards/
+
+An instance of the https://github.com/metanorma/standards-registry[registry engine]
+rendered by the Astro reference frontend (the same as
+https://github.com/CalConnect/standards.calconnect.org[standards.calconnect.org]).
+Everything Enosema-specific lives in `_config.yml`
+(identity + `registry:` + `branding:`), `_data/navigation.yml`,
+`metanorma.aggregate.yml` and the assets in `public/`.
+
+== How it works
+
+. Document sources live in https://github.com/enosema/docs[enosema/docs];
+  pushes publish GitHub Releases (channel `public/standards`, topic
+  `metanorma-release`).
+. `bundle exec rake build` aggregates those releases, enriches the catalog
+  contract (`registry/catalog.json`), generates citations (relaton-ts),
+  builds the Astro site, and finalizes artifacts into `dist/`.
+. The whole `dist/` tree is mounted at `/standards` of www.enosema.org
+  (`registry.base_path`).
+
+== Onboarding guide
+
+See the engine's
+https://github.com/metanorma/standards-registry/blob/main/docs/instance-guide.md[instance guide].

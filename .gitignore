@@ -1,0 +1,36 @@
+# Direnv
+.direnv/
+
+# Relaton
+/relaton
+relaton.Gemfile.lock
+iev
+
+# Build output
+*.err.html
+*.abort
+.DS_Store
+.byebug_history
+.tmp.xml
+_documents
+_input/*.rxl
+_input/csd.yaml
+bib/
+bibcoll/
+csd/
+.vscode/
+
+# Generated data
+/registry/
+_data/documents.json
+.artifacts/
+
+# Astro / Node
+dist/
+.astro/
+node_modules/
+vendor/
+
+TODO*
+.cache/
+.tmp/

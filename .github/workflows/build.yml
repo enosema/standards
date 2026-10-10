@@ -1,0 +1,59 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build registry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 3.4
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/aggregate
+          key: enosema-aggregate-${{ github.run_id }}
+          restore-keys: enosema-aggregate-
+
+      - name: Build (aggregate + enrich + citations + Astro + finalize)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec rake build
+
+      - name: Validate
+        run: |
+          bundle exec rake validate_schema
+          bundle exec rake validate_consistency
+          bundle exec rake verify_links
+
+      - name: Conformance
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec rake conformance
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: registry-site
+          path: dist/

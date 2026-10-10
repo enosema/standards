@@ -1,0 +1,15 @@
+categories:
+  - title: Standards
+    slug: standards
+    display_category_slug: standards
+    description: Enosema Foundation standards for managing concepts and their usage across organizations.
+    card_color: standard
+    card_css: cat-standard
+
+draft_stages:
+  - working-draft
+  - committee-draft
+  - draft
+  - proposal
+  - final-draft
+  - public-review

@@ -1,0 +1,42 @@
+# Instance configuration for the Enosema Standards Registry.
+#
+# The registry serves at https://www.enosema.org/standards/ — the built
+# dist/ tree is mounted under the /standards path of the main site.
+# Consumed by the shared registry engine (Registry::Config reads the
+# `registry:` map) and by the Astro frontend (src/lib/registry.ts).
+title: Enosema Standards Registry
+description: >-
+  The registry of Enosema Foundation standards
+url: https://www.enosema.org
+
+branding:
+  logo_light: /assets/images/enosema-logo.svg
+  logo_dark: /assets/images/enosema-logo.svg
+  copyright_name: Enosema Foundation
+  copyright_url: https://www.enosema.org/
+  footer:
+    community:
+      - text: Enosema
+        url: https://www.enosema.org/
+      - text: GitHub
+        url: https://github.com/enosema
+    resources:
+      - text: Standards repository
+        url: https://github.com/enosema/docs
+
+registry:
+  org: enosema
+  publisher_name: Enosema Foundation
+  # The registry is mounted at /standards of www.enosema.org.
+  base_path: "/standards"
+  urn_namespace: enosema
+  url_scheme: "/docs/:document_id/:year/"
+  docs_prefix: "/docs"
+  legacy_prefixes: []
+  features:
+    search: true
+    atom_feed: true
+    jsonld: true
+    opensearch: true
+    html: true
+  license_default: null

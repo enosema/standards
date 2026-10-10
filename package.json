@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "pagefind": "^1.5.2",
+    "tailwindcss": "^4.2.1"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "astro": "^7.3.8",
+    "relaton": "^0.1.2",
+    "yaml": "^2.9.1"
+  },
+  "name": "standards.calconnect.org",
+  "overrides": {
+    "postcss-selector-parser": "^7.1.6"
+  }
+}
