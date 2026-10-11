@@ -9,7 +9,6 @@ export const GET: APIRoute = ({ site }) => {
     `${base}/search/`,
     `${base}/drafts/`,
     `${base}/public-review/`,
-    `${base}/patents/`,
     ...categories.map((c) => `${base}${withBase(`/${c.slug}/`)}`),
   ].map((u) => `  <url><loc>${esc(u)}</loc></url>`);
   const docUrls = docs.map(
