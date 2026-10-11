@@ -10,7 +10,7 @@ include_drafts: true
 
 display_categories:
   - name: Standards
-    slug: standards
+    slug: publications
     doctypes:
       - standard
       - international-standard
