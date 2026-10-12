@@ -10,13 +10,13 @@ const draftsCount = docs.filter((d) => draftStages.includes(d.stage)).length;
 <Base>
   <div class="home-hero">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-      <h1 class="home-hero-title">Enosema Standards Registry</h1>
+      <h1 class="home-hero-title">CalConnect Document Registry</h1>
       <p class="home-hero-subtitle">
-        The official registry for Enosema Foundation deliverables &mdash; standards
+        The official registry for CalConnect deliverables &mdash; standards, specifications,
         reports, and other documents for calendar and scheduling interoperability.
       </p>
       <div class="global-search-wrap">
-        <svg class="gs-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        <svg aria-hidden="true" class="gs-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
         <input type="text" id="global-search" class="gs-input" placeholder="Search all documents by title or identifier…" autocomplete="off" />
         <kbd class="gs-kbd">/</kbd>
         <div id="global-search-results" class="gs-results hidden"></div>
@@ -90,7 +90,7 @@ const draftsCount = docs.filter((d) => draftStages.includes(d.stage)).length;
     </div>
     <div class="home-disclaimer">
       <h3 class="home-disclaimer-title">Disclaimer</h3>
-      <p>
+            <p>
         Any trade name used in documents or pages of this site is information given for the convenience
         of users and does not constitute an endorsement.
       </p>
