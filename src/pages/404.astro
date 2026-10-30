@@ -1,5 +1,5 @@
 ---
-import { withBase } from "../lib/registry";
+import { site, branding, withBase } from "../lib/registry";
 import Base from "../layouts/Base.astro";
 const year = new Date().getFullYear();
 ---
@@ -11,10 +11,10 @@ const year = new Date().getFullYear();
     <h2>Disclaimer</h2>
     <p>
       Attention is drawn to the possibility that some of the elements of documents
-      on this site may be the subject of patent rights. CalConnect shall not be held responsible
+      on this site may be the subject of patent rights. {site.publisher} shall not be held responsible
       for identifying any or all such patent rights. Details of any patent rights
       identified during the development of such documents will be provided in the Introduction
-      of the document and/or on the CalConnect list of patent declarations received.
+      of the document and/or on the {branding.copyright_name} list of patent declarations received.
     </p>
     <p>
       Any trade name used in documents or pages of this site is information given for the convenience
@@ -23,7 +23,7 @@ const year = new Date().getFullYear();
     <h2>Copyright</h2>
     <div class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
       <p class="font-medium text-gray-900 dark:text-white">
-        &copy; {year} The Calendaring and Scheduling Consortium, Inc.
+        &copy; {year} {branding.copyright_name}
       </p>
       <p class="mt-2">
         All rights reserved. Unless otherwise specified, no part of this
