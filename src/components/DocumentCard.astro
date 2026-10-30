@@ -41,7 +41,8 @@ const others = doc.files.filter((f) => !["html", "pdf", "xml", "rxl"].includes(f
           pdf: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z",
           xml: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
         };
-        return <a href={withBase(f.url)} download class={`dl-btn dl-${f.format}`} aria-label={`Download ${f.name} (${f.format.toUpperCase()})`}>
+        const isHtml = f.format === "html";
+        return <a href={withBase(f.url)} download={isHtml ? null : ""} class={`dl-btn dl-${f.format}`} aria-label={`${isHtml ? "View" : "Download"} ${f.name} (${f.format.toUpperCase()})`}>
           <svg aria-hidden="true" class="dl-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[f.format] ?? "M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"} /></svg> {f.format.toUpperCase()}
         </a>;
       })}
