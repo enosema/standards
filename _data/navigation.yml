@@ -5,6 +5,12 @@ categories:
     description: Enosema Foundation standards for managing concepts and their usage across organizations.
     card_color: standard
     card_css: cat-standard
+  - title: Directives
+    slug: directives
+    display_category_slug: directives
+    description: Enosema Directives — the governance, process, and IPR documents that govern ES standardization and publication.
+    card_color: directive
+    card_css: cat-directive
 
 draft_stages:
   - working-draft
