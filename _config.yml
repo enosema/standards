@@ -39,4 +39,7 @@ registry:
     jsonld: true
     opensearch: true
     html: true
-  license_default: null
+  license_default:
+    name: Creative Commons Attribution 4.0 International
+    url: https://creativecommons.org/licenses/by/4.0/
+    spdx: CC-BY-4.0
