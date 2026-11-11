@@ -78,7 +78,32 @@ const catalogRaw = readJson(path.join(
 )) as { org?: string; items: Doc[] };
 
 export const catalog = catalogRaw;
-export const docs: Doc[] = catalog.items;
+
+// The engine projects stage from Relaton status.stage.content, which is
+// the numeric ISO harmonized stage code (EFD 101 §6, e.g. "60" =
+// published, "40" = draft standard). Map codes to the registry's stage
+// vocabulary — used by draft filtering and the --color-stage-* tokens;
+// non-numeric stage names pass through unchanged.
+const ISO_STAGE_NAMES: Record<string, string> = {
+  "00": "proposal",
+  "10": "proposal",
+  "20": "working-draft",
+  "30": "committee-draft",
+  "40": "draft-standard",
+  "50": "final-draft",
+  "60": "published",
+  "90": "review",
+  "95": "withdrawn",
+};
+
+const normalizeStage = (stage: string): string =>
+  ISO_STAGE_NAMES[stage] ?? (stage || "published");
+
+export const docs: Doc[] = catalogRaw.items.map((d) => ({
+  ...d,
+  stage: normalizeStage(d.stage),
+  stage_css: normalizeStage(d.stage_css),
+}));
 
 export const navigation = YAML.parse(
   fs.readFileSync(path.join(root, "_data/navigation.yml"), "utf8")

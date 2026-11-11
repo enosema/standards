@@ -13,9 +13,9 @@ categories:
     card_css: cat-directive
 
 draft_stages:
+  - proposal
   - working-draft
   - committee-draft
-  - draft
-  - proposal
+  - draft-standard
   - final-draft
   - public-review
