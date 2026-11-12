@@ -18,6 +18,10 @@ display_categories:
     slug: directives
     doctypes:
       - directive
+  - name: Guides
+    slug: guides
+    doctypes:
+      - guide
 
 github:
   organizations:
