@@ -11,6 +11,12 @@ categories:
     description: Enosema Directives — the governance, process, and IPR documents that govern ES standardization and publication.
     card_color: directive
     card_css: cat-directive
+  - title: Guides
+    slug: guides
+    display_category_slug: guides
+    description: ES Guides — informative practice documents, including the concept register operation guide.
+    card_color: guide
+    card_css: cat-guide
 
 draft_stages:
   - proposal
