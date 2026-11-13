@@ -17,6 +17,12 @@ categories:
     description: ES Guides — informative practice documents, including the concept register operation guide.
     card_color: guide
     card_css: cat-guide
+  - title: Reports
+    slug: reports
+    display_category_slug: reports
+    description: ES Reports — studies and quality reviews reporting findings on terminology practice.
+    card_color: standard
+    card_css: cat-standard
 
 draft_stages:
   - proposal
