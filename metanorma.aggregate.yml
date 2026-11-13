@@ -22,6 +22,10 @@ display_categories:
     slug: guides
     doctypes:
       - guide
+  - name: Reports
+    slug: reports
+    doctypes:
+      - report
 
 github:
   organizations:
